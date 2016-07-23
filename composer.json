@@ -1,0 +1,28 @@
+{
+    "name": "php-xml/large-text-node",
+    "description": "Handling large text nodes requires using low-end PHP API functions. This package provides a simple interface to write large text nodes to a resource so that memory usage is reduced to a minimum.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harmen Stoppels",
+            "email": "harmenstoppels@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-libxml": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPXML\\TextNode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPXML\\TextNode\\Test\\": "test/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
