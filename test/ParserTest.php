@@ -3,12 +3,9 @@
 namespace PHPXML\TextNode\Test;
 
 use PHPUnit\Framework\TestCase;
-use PHPXML\TextNode\NoMatchFound;
 use PHPXML\TextNode\NotATextNode;
 use PHPXML\TextNode\Parser;
-use PHPXML\TextNode\ResourceReader;
 use PHPXML\TextNode\XMLException;
-
 
 class ParserTest extends TestCase
 {
@@ -72,23 +69,6 @@ class ParserTest extends TestCase
         rewind($output);
         $this->assertEmpty(stream_get_contents($output));
         fclose($output);
-    }
-
-    /** @test */
-    public function when_no_match_is_found_in_the_reader_it_should_throw()
-    {
-        $this->expectException(NoMatchFound::class);
-
-        $input = fopen('php://memory', 'w+');
-        fwrite($input, $this->noMatch());
-        rewind($input);
-
-        $output = fopen('php://memory', 'w+');
-
-        $reader = new ResourceReader($input, 'some/target', $output, 16);
-        $reader->parse();
-        fclose($output);
-        fclose($input);
     }
 
     /** @test */

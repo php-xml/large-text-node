@@ -2,7 +2,7 @@
 
 namespace PHPXML\TextNode;
 
-final class ResourceReader
+final class StreamReader
 {
 
     /**
